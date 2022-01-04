@@ -28,6 +28,9 @@ int main()
     {
         struct controller copy_field = field; //Copying the field for later use
 
+        int random = rand() % (TETROMINO_TYPES); //Defines which tetromino is spawned
+        struct tetromino tetro = tetromino_array[random]; //Assigning the selected tetromino to a single struct
+
         //Creating the initial thread
         pthread_t thread = 0;
         if(pthread_create(&thread, NULL, user_input, (void*)&tetro) != 0)
@@ -35,8 +38,6 @@ int main()
             fprintf(stderr, "Error creating a thread\n");
             exit(EXIT_FAILURE);
         }
-        int random = rand() % (TETROMINO_TYPES); //Defines which tetromino is spawned
-        struct tetromino tetro = tetromino_array[random]; //Assigning the selected tetromino to a single struct
 
         //Spawning tetromino to the starting position in the field
         init_tetromino_to_field(tetro, &field);

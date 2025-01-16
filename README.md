@@ -1,7 +1,8 @@
 # Tetris
 ### Command Line Tetris.
 
-<p>User can rotate tetrominos by using WASD and then pressing enter. </p>
+* User can rotate tetrominos by pressing R and then enter.
+* User can move using WASD and then pressing then enter.
 
 ### Build System
 * Make
